@@ -1,10 +1,16 @@
+provider "google" {
+
+}
+
 provider "google-beta" {
 
 access_token = var.access_token
 
 }
 
+
 resource "google_filestore_instance" "instance" { 
+  provider = "google-beta"  
   name = "test-instance"
   location = "us-central1-b"
   tier = "PREMIUM"
