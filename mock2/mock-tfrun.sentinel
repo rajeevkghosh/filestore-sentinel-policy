@@ -1,0 +1,37 @@
+id = "run-ZRxtDcyFnSxt7RWx"
+created_at = "2022-01-27T09:19:41.620Z"
+message = "Triggered via UI"
+commit_sha = "f9636cb5cb584c5de3749b9cfb46a9579cddeabc"
+speculative = false
+is_destroy = false
+refresh = true
+refresh_only = false
+replace_addrs = null
+target_addrs = null
+
+variables = {
+	"access_token": {
+		"category":  "terraform",
+		"sensitive": true,
+	},
+}
+
+organization = {
+	"name": "Ashwin-21",
+}
+
+workspace = {
+	"auto_apply":  false,
+	"created_at":  "2022-01-27T06:50:41.958Z",
+	"description": "",
+	"id":          "ws-EVfnXgKDQTSBn9mr",
+	"name":        "Rajeev-filestore-sentinel-policy",
+	"tags":        [],
+	"vcs_repo": {
+		"branch":             "",
+		"display_identifier": "rajeevkghosh/filestore-sentinel-policy",
+		"identifier":         "rajeevkghosh/filestore-sentinel-policy",
+		"ingress_submodules": false,
+	},
+	"working_directory": "",
+}

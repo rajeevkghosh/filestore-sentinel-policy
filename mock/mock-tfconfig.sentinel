@@ -1,0 +1,124 @@
+import "strings"
+import "types"
+
+_modules = {
+	"root": {
+		"data":    {},
+		"modules": {},
+		"outputs": {},
+		"providers": {
+			"google": {
+				"alias": {
+					"": {
+						"config":     {},
+						"references": {},
+						"version":    "",
+					},
+				},
+				"config":     {},
+				"references": {},
+				"version":    "",
+			},
+			"google-beta": {
+				"alias": {
+					"": {
+						"config": {},
+						"references": {
+							"access_token": [
+								"var.access_token",
+							],
+						},
+						"version": "",
+					},
+				},
+				"config": {},
+				"references": {
+					"access_token": [
+						"var.access_token",
+					],
+				},
+				"version": "",
+			},
+		},
+		"resources": {
+			"google_filestore_instance": {
+				"instance": {
+					"config": {
+						"file_shares": [
+							{
+								"capacity_gb": 2660,
+								"name":        "share1",
+							},
+						],
+						"location": "us-central1-b",
+						"name":     "test-instance",
+						"networks": [
+							{
+								"connect_mode": "PRIVATE_SERVICE_ACCESS",
+								"modes": [
+									"MODE_IPV4",
+								],
+								"network": "default",
+							},
+						],
+						"tier": "PREMIUM",
+					},
+					"provisioners": null,
+					"references": {
+						"file_shares": [
+							{
+								"capacity_gb": [],
+								"name":        [],
+							},
+						],
+						"location": [],
+						"name":     [],
+						"networks": [
+							{
+								"connect_mode": [],
+								"modes":        [],
+								"network":      [],
+							},
+						],
+						"tier": [],
+					},
+				},
+			},
+		},
+		"variables": {
+			"access_token": {
+				"default":     null,
+				"description": "access token",
+			},
+		},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+modules = _modules.root.modules
+providers = _modules.root.providers
+resources = _modules.root.resources
+variables = _modules.root.variables
+outputs = _modules.root.outputs

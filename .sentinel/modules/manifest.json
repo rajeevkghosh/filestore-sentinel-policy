@@ -1,0 +1,10 @@
+{
+	"records": [
+		{
+			"key": "tfplan-functions",
+			"source": "./tfplan-functions.sentinel",
+			"sourceSum": "",
+			"dest": "/home/rajeevghosh/wells-27jan2022/filestore-sentinel-policy/tfplan-functions.sentinel"
+		}
+	]
+}
